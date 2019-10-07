@@ -1,4 +1,22 @@
-<h1>Log in</h1>
+<% if @user %>
+  <% if @user.errors.present? %>
+    <ul>
+      <% @user.errors.full_messages.each do |message| %>
+        <li class="uk-alert uk-alert-warning"><%= message %></li>
+      <% end %>
+    </ul>
+  <% end %>
+<% end %>
+
+<header>
+    <div class="container">
+        <div class="header-left">
+            <span>人生</span>
+        </div>
+
+
+    </div>
+</header>
 <%= form_with(scope: :session, url: sessions_path, local: true) do |f| %>
 
   <%= f.label :email %>
@@ -7,5 +25,5 @@
   <%= f.label :password %>
   <%= f.password_field :password %>
 
-  <%= f.submit "Log in" %>
+  <a><%= f.submit "ログイン", class: "btn login"%></a>
 <% end %>
