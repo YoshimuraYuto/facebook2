@@ -16,18 +16,19 @@
 //= require jquery/dist/jquery.js
 //= require bootstrap/dist/js/bootstrap.min
 //= require_tree .
-$(function(){
 
-    $('.login').click(function(){
-        $('.login-modal-wrapper').show();
-    });
-
-    $('.signup').click(function(){
-        $('.signup-modal-wrapper').show();
-    });
-
-
-})
+// $(function(){
+//
+//     $('.login').click(function(){
+//         $('.login-modal-wrapper').show();
+//     });
+//
+//     $('.signup').click(function(){
+//         $('.signup-modal-wrapper').show();
+//     });
+//
+//
+// })
 
 
 
@@ -85,4 +86,57 @@ $(function() {
     }
     toggleChangeBtn();
   });
+});
+// $(function() {
+//   // 「#language-wrapper」にhoverしたときのhoverイベントを作成してください
+//   $("#language-wrapper").hover(
+//       function() {
+//         $(".language-text").fadeIn();
+//       },
+//       function() {
+//         $(".language-text").fadeOut();
+//       });
+//
+//
+// $('.faq-list-item').click(function(){
+//         var $answer = $(this).find('.answer');
+//         console.log('push number :' + questionIndex);
+//         console.log($answer);
+//         if ($answer.hasClass('open')){
+//             $answer.removeClass('open');
+//             $answer.slideUp("slow");
+//             $(this).find('span').text('+');
+//         } else {
+//             $answer.addClass('open');
+//             $answer.slideDown("slow");
+//             $(this).find('span').text('-');
+//             console.log($answer);
+//         }
+//     })
+//   });
+//
+//
+
+$(function() {
+  // 「#change-text」要素に対するclickイベントを作成してください
+   $("#change-text").click(function() {
+     $("#text").text("人生を変えよう");
+   });
+
+  // 「#change-html」要素に対するclickイベントを作成してください
+  $("#change-html").click(function() {
+     $("#text").html('<a href="#">ようこそ、人生へ</a>');
+   });
+
+});
+$(function() {
+  // 「#language-wrapper」にhoverしたときのhoverイベントを作成してください
+  $("#language-wrapper").hover(
+      function() {
+        $(".language-text").fadeIn();
+      },
+      function() {
+        $(".language-text").fadeOut();
+      });
+
 });

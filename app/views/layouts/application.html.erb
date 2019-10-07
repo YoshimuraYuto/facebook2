@@ -27,7 +27,7 @@
         <div id="gnavi" class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
 
-            <li><a href="/reis" class="btn login">top</a></li>
+            <li><a href="/blogs" class="btn login">top</a></li>
             <li><a href="/contacts" class="btn signup">top2</a></li>
             <li><a href="/users" class="btn login">top3</a></li>
 
@@ -38,11 +38,17 @@
               <%= link_to "Sign up", new_user_path %>
               <%= link_to "Login", new_session_path %>
             <% end %>
+
           </ul>
         </div>
       </div>
     </nav>
+    
+
     <script src="script.js"></script>
     <%= yield %>
+    <footer>
+
+    </footer
   </body>
 </html>
