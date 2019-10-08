@@ -17,6 +17,9 @@ class ContactsController < ApplicationController
     end
   end
 
+  # def show
+  # end
+
   private
 
   def contact_params
