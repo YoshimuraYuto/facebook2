@@ -13,7 +13,7 @@
   <tbody>
     <% @lists.each do |list| %>
       <tr>
-        <%= image_tag list.user.image.url %>
+        <%= image_tag list.user.image.url if list.user.image.url %>
         <td><%= list.user.name %></td>
         <td><%= list.content %></td>
         <td><%= link_to 'Show', list %></td>

@@ -16,7 +16,7 @@
   <tbody>
     <% @users.each do |user| %>
       <tr>
-        <td class="example1"><%= image_tag user.image.url %></td>
+        <td><%= image_tag user.image.url if user.image.url %></td>
         <td><%= user.name %></td>
         <td><%= user.content %></td>
         <td><%= user.email %></td>

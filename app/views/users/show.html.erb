@@ -5,7 +5,10 @@
 
 <p>
   <strong>Image:</strong>
-  <%= image_tag @user.image.url %>
+  <% if @user.image.url.present? %>
+    <%= image_tag @user.image.url if @user.image.url %>
+  <% end %>
+
 </p>
 <p id="notice"><%= notice %></p>
 
