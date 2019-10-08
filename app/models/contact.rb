@@ -3,7 +3,6 @@ class Contact < ApplicationRecord
 
   validates :email, presence: true, length: { maximum: 255 },
                     format: { with: /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i }
-  has_secure_password
-  validates :content, presence: true
 
+  validates :content, presence: true
 end

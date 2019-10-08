@@ -33,17 +33,15 @@ class FeedsController < ApplicationController
     if params[:back]
       render :new
     else
-
       if @feed.save
         redirect_to @feed, notice: 'Feed was successfully created.'
-
       else
         render :new
-
       end
     end
-
   end
+
+
 
   # PATCH/PUT /feeds/1
   # PATCH/PUT /feeds/1.json
@@ -70,9 +68,9 @@ class FeedsController < ApplicationController
   end
 
   def confirm
-  @feed = Feed.new(feed_params)
-  @feed.user_id = current_user.id
-  render :new if @feed.invalid?
+    @feed = Feed.new(feed_params)
+    @feed.user_id = current_user.id
+    render :new if @feed.invalid?
   end
 
   private
@@ -80,9 +78,8 @@ class FeedsController < ApplicationController
     def set_feed
       @feed = Feed.find(params[:id])
     end
-
     # Never trust parameters from the scary internet, only allow the white list through.
     def feed_params
-      params.require(:feed).permit(:image, :image_cache)
+      params.require(:feed).permit(:image, :image_cache, :content, :name)
     end
 end

@@ -7,7 +7,9 @@
       <ul class="header-menu-right">
 
         <li>
-          <a href="#contact">お問い合わせ</a>
+          <!-- <a href="#contact/index">お問い合わせ</a> -->
+          <%= link_to 'contact/index', @contact %>
+
         </li>
       </ul>
     </div>
@@ -25,15 +27,6 @@
       </ul>
     </div>
   <% end %>
-  <div class="blog_title">
-    <%= form.label :title %>
-    <%= form.text_field :title %>
-  </div>
-  <div class="blog_title">
-    <%= form.label :content %>
-    <%= form.text_field :content %>
-  </div>
-  <%= form.submit %>
 <% end %>
 
 
@@ -46,15 +39,37 @@
       </div>
       <div class="contact-form">
         <h4>メッセージを送る</h4>
-        <form>
-          <div class="error-message"></div>
+
+          <!-- <div class="error-message"></div>
           <input type="text" name="name" placeholder="お名前" class="contact-name">
           <div class="error-message"></div>
-          <input type="text" name="email" placeholder="メールアドレス" class="contact-email">
-          <div class="error-message"></div>
-          <textarea name="message" placeholder="メッセージ内容"></textarea>
-          <button type="submit" class="btn btn-contact">送信</button>
-        </form>
+          <input type="text" name="email" placeholder="メールアドレス" class="contact-email"> -->
+
+        <%= form_with(model: @contact, local: true) do |form| %>
+          <!-- <div class="error-message"></div>
+          <textarea name="message" placeholder="メッセージ内容"></textarea> -->
+          <div class="contact_name">
+            <%= form.label :name %>
+            <%= form.text_field :name %>
+          </div>
+          <div class="contact_name">
+            <%= form.label :email %>
+            <%= form.text_field :email %>
+          </div>
+          <div class="contact_title">
+            <%= form.label :title %>
+            <%= form.text_field :title %>
+          </div>
+          <div class="contact_title">
+            <!-- <textarea name="message" placeholder="メッセージ内容"></textarea> -->
+
+            <%= form.label :content %>
+            <%= form.text_field :content %>
+          </div>
+
+          <%= form.submit "おはよう", class: "btn btn-contact"%>
+        <% end %>
+
       </div>
 
     </div>
