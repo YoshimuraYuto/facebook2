@@ -3,6 +3,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 gem 'carrierwave'
 gem 'mini_magick'
 ruby '2.6.3'
+gem 'rails_12factor', group: :production
 gem 'bcrypt', '3.1.11'
 
 gem 'rails', '~> 5.2.3'
