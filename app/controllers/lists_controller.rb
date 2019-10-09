@@ -57,12 +57,12 @@ class ListsController < ApplicationController
 
   private
     # Use callbacks to share common setup or constraints between actions.
-    def set_list
-      @list = List.find(params[:id])
-    end
+  def set_list
+  @list = List.find(params[:id])
+  end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def list_params
-      params.require(:list).permit(:content)
-    end
+      # Never trust parameters from the scary internet, only allow the white list through.
+  def list_params
+  params.require(:list).permit(:content)
+  end
 end
